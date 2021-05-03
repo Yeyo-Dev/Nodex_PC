@@ -1,0 +1,32 @@
+<?php
+require_once ("conexion.php");
+
+error_reporting(0);
+$buscar = $_POST['buscar'];
+$busqueda = "SELECT * FROM almacen WHERE id_producto LIKE '%". $buscar. "%' OR nombre LIKE '%" . $buscar ."%' OR tipo LIKE '%" . $buscar ."%';";
+
+if (empty($buscar) || $buscar=""){
+	$sql = "SELECT * FROM almacen ORDER BY nombre ASC";
+}else{
+	$sql = $busqueda;
+}
+
+$res=$mysqli->query($sql);
+$totCuentas = mysqli_num_rows($res);
+
+
+if ($totCuentas>0) {
+
+		while ($rowCunt = mysqli_fetch_array($res)) {
+			echo '<div id="'.$rowCunt['id_producto'].'" class="tarjeta">';
+			echo '<table><tr><td>	<img src="data:image/jpg;base64,'. base64_encode($rowCunt['foto']).' alt="'.$rowCunt['nombre'].'"></td';
+			echo '<td>	<p><b>Id: </b>'.$rowCunt['id_producto'].'</p><br>	<h3>'.$rowCunt['nombre'].'</h3><br>	<p><b>tipo: </b>'.$rowCunt['tipo'].'</p><br></td>	<tr><td><p><b>Descripcion: </b>'.$rowCunt['descripcion'].'</p><br>	<p><b>Precio Individual: </b>$'.$rowCunt['precio_individual'].'</p><br>	<p><b>Cantidad: </b>'.$rowCunt['cantidad'].'</p><br>	<p><b>Precio Mayoreo: </b>'.$rowCunt['precio_mayoreo'].'</p></td></tr>';
+			echo '</table></div>';
+		}
+
+		
+} else {
+	echo '<h1 class="NR">No se encontraron registros </h1>';
+}
+
+?>

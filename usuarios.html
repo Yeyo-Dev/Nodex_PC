@@ -1,0 +1,37 @@
+<DOCTYPE html>
+    <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-1.0">
+            <title>Formulario Usuarios</title>
+            <link rel="stylesheet" href="css/estilos1.css">
+            <script src="./js/sesion.js"></script>
+        </head>
+        <div class="fondo">
+        <body class = "formularios">
+            <img class="Logo" src="img/Nodex.png" alt="Logo de Nodex-PC">
+           <form class="form"  name="Pedir_Dat" method = "POST" action = "php/empleados_altas.php" enctype = "multipart/form-data">
+               <h1>Formulario Usuarios</h1>
+               <input class="controls" type="text" name="usuario_id" id="usuario_id" placeholder="Inserte ID de Usuario">
+               <input class="controls" type="text" name="usuario_nombre" id="usuario_nombre" placeholder="nombre(s) del usuario">
+               <input class="controls" type="text" name="usuario_usuario" id="usuario_usuario" placeholder="USUARIO">
+               <input class="controls" type="text" name="usuario_password" id="usuario_password" placeholder="Password">
+               <input class="controls" type="text" name="usuario_seguridad" id="usuario_seguridad" placeholder="Nivel de Seguridad">
+
+               
+               <center>
+               <table class="tabla">
+                   <tr>
+                    <td></td>
+                    <td><input class="button" type="submit" value="Registar"></td>
+                    <td><input class="button" type="submit" value="Nuevo"></td>
+                    <td><a href="index.html"><input class="button" type="button" value="Cerrar"></a></td>
+                    <td></td>
+                   </tr>
+               </table>
+               </center>
+            </form>
+        </body>
+    </div>
+    </html>

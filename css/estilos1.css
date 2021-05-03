@@ -1,0 +1,222 @@
+body { /* Cuerpo del login*/
+    margin: 0;
+    padding: 0; 
+    background: url(../img/Fondo.jpg) no-repeat center top; 
+    background-size: cover; 
+    font-family: verdana, arial; 
+    height: 100px; 
+}
+#reloj-frame{
+    border-style: none;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.login-box { /* El cuadro de color negro */
+    width: 320px; 
+    height: 350px; 
+    background: black;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    border-radius: 20px;
+}
+
+.login-box .avatar { /* La imagen de Nodex-PC */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: absolute;
+    top: -80px;
+    left: calc(50% - 75px);
+}
+
+.login-box h1 { /* El titulo "Iniciar sesion" */
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size:25px;
+}
+
+.login-box label { /* Los texto */
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+}
+
+.login-box input { /* Botones */
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px; 
+    color:#fff;
+    font-size: 16px;
+}
+
+.login-box input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: white;
+    color: #000000;
+    font-size: 16px;
+    border-radius: 20px;
+}
+
+.menu {
+    list-style: none;
+    padding: 8px;
+    background: black;
+    width: 97%;
+    max-width: 985px;
+    margin:auto;
+    margin-top: 50px;
+    box-shadow: 20px 20px 30px white;
+    border: 1px solid white;
+}
+
+.menu li a {
+    text-decoration: none;
+    color:white;
+    padding:18px;
+    display: block;
+}
+
+.menu li {
+    display: inline-block;
+    text-align: center;
+    
+}
+
+.menu li a:hover {
+    background: gray;
+    border-radius: 20px;
+}
+
+.menu li .salir:hover {
+    background: rgb(255, 1, 1);
+    border-radius: 20px;
+}
+  
+.form {
+    width: 500px;
+    padding: 30px;
+    background: url(../img/Fondo2.jpg) no-repeat center top;
+    background-size: cover; 
+    margin:auto;
+    margin-top: 110px;
+    border-radius: 4px;
+    box-shadow: 7px 13px 37px rgb(4, 0, 56);
+    border-radius: 10px;
+}
+
+.form h1 { 
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size:25px;
+    color:white;
+    font-family: 'Agency FB';
+}
+
+.controls {
+    width: 100%;
+    background: white;
+    padding: 10px;
+    border-radius:4px;
+    margin-bottom: 16px;
+    border: 3px solid rgb(0, 9, 63);
+    font-family: 'calibri';
+    font-size: 18px;
+    box-shadow: 5px 7px 10px black;
+
+}
+.image {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: none;
+    font-family: 'calibri';
+    font-size: 22px;
+    color:#fff;
+
+
+}
+
+.tabla tr td .button {
+    width: 90px;
+    background: rgb(0, 9, 90);
+    border: none;
+    padding: 10px;
+    color:#fff;
+    margin: 5px 0;
+    font-size: 22px;
+    border-radius: 10px;
+    box-shadow: 2px 5px 7px black;
+    font-family: 'Agency FB';
+
+}
+
+.tabla tr td .button:hover {
+  background:rgb(3, 94, 102);
+  font-size: 18px;
+  font-family: 'Agency FB';
+}
+
+.tabla tr td {
+    padding: 5px;
+}
+
+.main {
+    background: url(../img/Fondo1.jpg) no-repeat center top;
+    margin: 0;
+    padding: 0; 
+    background-size: cover; 
+}
+
+.formularios {
+    background: url(../img/Fondo3.jpg) no-repeat center top;
+    margin: 0;
+    padding: 0; 
+    background-size: cover; 
+}
+
+.Logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: 40px;
+    left: calc(50% - 45px);
+}
+
+.login-box input[type="submit"]:hover{
+    background-color: rgb(214, 214, 216);
+}
+ #error{
+     font-family: 'Times New Roman', Times, serif;
+     color: red;
+     text-align: center;
+     font-size: smaller;
+     margin: 0px;
+ }
+
+ #img-foto{
+     width: 130px;
+     height: 150px;
+     border-style: solid;
+     border-color: black;
+     border-width: 5px;
+ }

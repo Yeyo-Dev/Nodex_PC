@@ -1,0 +1,56 @@
+<DOCTYPE html>
+    <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-1.0">
+            <title>Formulario Empleados</title>
+            <link rel="stylesheet" href="css/estilos1.css">
+            <script src="./js/sesion.js"></script>
+
+        </head>
+        <div class="fondo">
+        <body class = "formularios">
+            <img class="Logo" src="img/Nodex.png" alt="Logo de Nodex-PC">
+           <form class="form" name="Pedir_Dat" method = "POST" action = "php/empleados_altas.php" enctype = "multipart/form-data">
+               <h1>Formulario Empleados</h1>
+               <table><tr> <td>
+               <input class="controls" type="text" name="empleado_id" id="empleado_id" placeholder="Inserte ID de empleado">
+               <input class="controls" type="text" name="empleado_nombre" id="empleado_nombre" placeholder="Nombre del empleado">
+               </td><td>
+               <img alt="Foto" id="img-foto" src="./img/none.jpg" onclick="document.getElementById('empleado_foto').click()">
+               </td></tr></table>
+               <input class="image" type="file" name="empleado_foto" id="empleado_foto" placeholder="Foto" hidden onchange="visualizarFoto()"><br>
+               <input class="controls" type="text" name="empleado_apellidoP" id="empleado_apellidoP" placeholder="Apellido Paterno">
+               <input class="controls" type="text" name="empleado_apellidoM" id="empleado_apellidoM" placeholder="Apellido Materno">
+               <input class="controls" type="text" name="empleado_nacimiento" id="empleado_nacimiento" placeholder="Fecha de nacimiento">
+               <input class="controls" type="text" name="empleado_direccion" id="empleado_direccion" placeholder="Direccion">
+               <input class="controls" type="text" name="empleado_tel_fijo" id="empleado_tel_fijo" placeholder="Telefono fijo">
+               <input class="controls" type="text" name="empleado_tel_cel" id="empleado_tel_cel" placeholder="Telefono celular">
+               <input class="controls" type="text" name="empleado_puesto" id="empleado_puesto" placeholder="Puesto">
+               <input class="controls" type="text" name="empleado_contraseña" id="empleado_contraseña" placeholder="Contraseña">
+               
+               <center>
+               <table class="tabla">
+                   <tr>
+                    <td></td>
+                    <td><input class="button" type="submit" value="Registar"></td>
+                    <td><input class="button" type="submit" value="Nuevo"></td>
+                    <td><a href="index.html"><input class="button" type="submit" value="Cerrar"></a></td>
+                    <td></td>
+                   </tr>
+               </table>
+               </center>
+            </form>
+           <script>   
+                function visualizarFoto(){
+                    let file = document.getElementById('empleado_foto').files[0]
+                    console.log(file);
+                    let img = URL.createObjectURL(file);
+                    console.log(img);
+                    document.getElementById('img-foto').setAttribute("src",img);
+                }
+           </script>
+        </body>
+    </div>
+    </html>

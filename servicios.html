@@ -1,0 +1,37 @@
+<DOCTYPE html>
+    <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-1.0">
+            <title>Formulario Servicios</title>
+            <script src="./js/sesion.js"></script>
+            <link rel="stylesheet" href="css/estilos1.css">
+        </head>
+        <div class="fondo">
+        <body class = "formularios">
+            <img class="Logo" src="img/Nodex.png" alt="Logo de Nodex-PC">
+           <form class="form" name="Pedir_Dat" method = "POST" action = "php/almacen_altas.php" enctype = "multipart/form-data">
+               <h1>Formulario Servicios</h1>
+               <input class="controls" type="text" name="servicio-folio" id="servicio-folio" placeholder="Inserte folio">
+               <input class="controls" type="text" name="servicio_tipo" id="servicio_tipo" placeholder="Tipo de mantenimiento">
+               <input class="controls" type="text" name="servicio-fecha" id="servicio_fecha" placeholder="Fecha">
+               <input class="controls" type="text" name="servicio_hora" id="servicio_hora" placeholder="Hora">
+               <input class="controls" type="text" name="servicio_id_cliente" id="servicio_id_cliente" placeholder="Inserte id de cliente">
+               <input class="controls" type="text" name="servicio_precio" id="servicio_precio" placeholder="Precio total">
+               
+               <center>
+               <table class="tabla">
+                   <tr>
+                    <td></td>
+                    <td><input class="button" type="submit" value="Registar"></td>
+                    <td><input class="button" type="submit" value="Nuevo"></td>
+                    <td><a href="index.html"><input class="button" type="button" value="Cerrar"></a></td>
+                    <td></td>
+                   </tr>
+               </table>
+               </center>
+            </form>
+        </body>
+    </div>
+    </html>

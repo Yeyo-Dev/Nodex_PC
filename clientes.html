@@ -1,0 +1,40 @@
+<DOCTYPE html>
+    <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-1.0">
+            <title>Formulario Clientes</title>
+            <script src="./js/sesion.js"></script>
+            <link rel="stylesheet" href="css/estilos1.css">
+        </head>
+        <div class="fondo">
+        <body class = "formularios">
+            <img class="Logo" src="img/Nodex.png" alt="Logo de Nodex-PC">
+           <form class="form" name="Pedir_Dat" method = "POST" action = "php/clientes_altas.php" enctype = "multipart/form-data">
+               <h1>Formulario Clientes</h1>
+               <input class="controls" type="text" name="clientes_id" id="clientes_id" placeholder="Inserte ID de cliente">
+               <input class="controls" type="text" name="clientes_nombre" id="clientes_nombre" placeholder="Nombre(s) del cliente">
+               <input class="controls" type="text" name="clientes_apellidoP" id="clientes_apellidoP" placeholder="Apellido Paterno">
+               <input class="controls" type="text" name="clientes_apellidoM" id="clientes_apellidoM" placeholder="Apellido Materno">
+               <input class="controls" type="text" name="clientes_direccion" id="clientes_direccion" placeholder="Dirección">
+               <input class="controls" type="text" name="clientes_email" id="clientes_email" placeholder="E-Mail">
+               <input class="controls" type="text" name="clientes_tel1" id="clientes_tel1" placeholder="Telefono 1">
+               <input class="controls" type="text" name="clientes_tel2" id="clientes_tel2" placeholder="Telefono 2">
+               <input class="controls" type="text" name="clientes_nacimiento" id="clientes_nacimiento" placeholder="Fecha de nacimiento">
+               
+               <center>
+               <table class="tabla">
+                   <tr>
+                    <td></td>
+                    <td><input class="button" type="submit" value="Registar"></td>
+                    <td><input class="button" type="submit" value="Nuevo"></td>
+                    <td><a href="index.html"><input class="button" type="button" value="Cerrar"></a></td>
+                    <td></td>
+                   </tr>
+               </table>
+               </center>
+            </form>
+        </body>
+    </div>
+    </html>

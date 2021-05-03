@@ -1,0 +1,38 @@
+<DOCTYPE html>
+    <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-1.0">
+            <title>Formulario Ventas</title>
+            <link rel="stylesheet" href="css/estilos1.css">
+            <script src="./js/sesion.js"></script>
+        </head>
+        <div class="fondo">
+        <body class = "formularios">
+            <img class="Logo" src="img/Nodex.png" alt="Logo de Nodex-PC">
+           <form class="form" name="Pedir_Dat" method = "POST" action = "php/empleados_altas.php" enctype = "multipart/form-data">
+               <h1>Formulario Ventas</h1>
+               <input class="controls" type="text" name="venta_id" id="venta_id" placeholder="Inserte Folio">
+               <input class="controls" type="text" name="almacen_id" id="almacen_id" placeholder="Inserte ID de producto">
+               <input class="controls" type="text" name="empleado_id" id="empleado_id" placeholder="Inserte ID de empleado">
+               <input class="controls" type="text" name="cliente_id" id="cliente_id" placeholder="Inserte ID de cliente">
+               <input class="controls" type="text" name="venta_fecha" id="venta_fecha" placeholder="Fecha">
+               <input class="controls" type="text" name="almacen_cantidad" id="almacen_cantidad" placeholder="Cantidad">
+               <input class="controls" type="text" name="venta_precio" id="venta_precio" placeholder="Precio">
+               
+               <center>
+               <table class="tabla">
+                   <tr>
+                    <td></td>
+                    <td><input class="button" type="submit" value="Registar"></td>
+                    <td><input class="button" type="submit" value="Nuevo"></td>
+                    <td><a href="index.html"><input class="button" type="button" value="Cerrar"></a></td>
+                    <td></td>
+                   </tr>
+               </table>
+               </center>
+            </form>
+        </body>
+    </div>
+    </html>

@@ -1,0 +1,52 @@
+<DOCTYPE html>
+<html lang="es">
+   <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/estilos1.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script>
+           fetch("./php/sesion.php")
+    .then((res)=>{
+        return res.text();
+    })
+    .then((res1)=>{
+        console.log(res1)
+        if (res1 == 'true') {
+            window.location.href = "./index.html";       
+        }else if(res1 == 'error'){
+            console.log("error");
+        }
+    })
+    .catch((err)=>{ 
+        console.log(err);
+    });
+    </script>
+   </head> 
+   <body>
+      <div class="login-box">
+         <img class="avatar" src="img/Nodex.png" alt="Logo de Nodex">
+         <h1>Iniciar sesión</h1>
+         <!--Formulario de Usuario-->
+         <form id="FRMLogin" >
+            <!--Usuario-->
+            <label for="username">Usuario</label>
+            <input type="text" placeholder="Inserte su usuario" id="user" name="user">
+            <!--Contraseña-->
+            <label for="password">Contraseña</label>
+            <input type="password" placeholder="Inserte su contraseña" id="password" name="password">
+               <p id="error" hidden></p>
+            <input class="" type="submit" value="Ingresar">
+
+         </form>
+      </div>
+      <script>
+      gsap.from(".login-box",{duration: 1, opacity: 0, y: 50});
+      gsap.set(".avatar", {transformOrigin: "50% 50%"});
+      gsap.to(".avatar", {duration: 4, rotation: 2*720, ease:"back"});
+      </script>
+      <script src="./js/login.js"></script>
+   </body>
+</html>

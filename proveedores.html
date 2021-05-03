@@ -1,0 +1,51 @@
+<DOCTYPE html>
+    <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-1.0">
+            <title>Formulario Proveedores</title>
+            <script src="./js/sesion.js"></script>
+            <link rel="stylesheet" href="css/estilos1.css">
+        </head>
+        <div class="fondo">
+        <body class = "formularios">
+            <img class="Logo" src="img/Nodex.png" alt="Logo de Nodex-PC">
+           <form class="form" name="Pedir_Dat" method = "POST" action = "php/empleados_altas.php" enctype = "multipart/form-data">
+               <h1>Formulario Proveedores</h1>
+               <table><tr> <td>
+               <input class="controls" type="text" name="proveedor_id" id="proveedor_id" placeholder="Inserte ID de Proveedor">
+               <input class="controls" type="text" name="proveedor_nombre" id="proveedor_nombre" placeholder="Nombre(s) del proveedor">
+               </td><td>
+               <img alt="Foto" id="img-foto" src="./img/none.jpg" onclick="document.getElementById('proveedor_foto').click()">
+               </td></tr></table>
+               <input class="image" type="file" name="proveedor_foto" id="proveedor_foto" placeholder="Foto" onchange="visualizarFoto()"><br>
+               <input class="controls" type="text" name="proveedor_apellidoP" id="proveedor_apellidoP" placeholder="Apellido Paterno">
+               <input class="controls" type="text" name="proveedor_apellidoM" id="proveedor_apellidoM" placeholder="Apellido Materno">
+               <input class="controls" type="text" name="proveedor_tipo_producto" id="proveedor_tipo_producto" placeholder="Tipo de producto">
+               <input class="controls" type="text" name="proveedor_email" id="proveedor_email" placeholder="E-mail">
+               
+               <center>
+               <table class="tabla">
+                   <tr>
+                    <td></td>
+                    <td><input class="button" type="submit" value="Registar"></td>
+                    <td><input class="button" type="submit" value="Nuevo"></td>
+                    <td><a href="index.html"><input class="button" type="button" value="Cerrar"></a></td>
+                    <td></td>
+                   </tr>
+               </table>
+               </center>
+            </form>
+        </body>
+        <script>   
+            function visualizarFoto(){
+                let file = document.getElementById('proveedor_foto').files[0]
+                console.log(file);
+                let img = URL.createObjectURL(file);
+                console.log(img);
+                document.getElementById('img-foto').setAttribute("src",img);
+            }
+       </script>
+    </div>
+    </html>

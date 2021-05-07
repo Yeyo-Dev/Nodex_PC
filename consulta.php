@@ -115,8 +115,10 @@ $ruta = "./php/consulta_". $tabla .".php";
 
             formulario2.addEventListener("keyup", function(e) {
                 e.preventDefault();
-                let box = document.getElementById("Respuesta");
-
+                consultar();                
+            });
+            
+            function consultar(){
                 let datax = new FormData(formulario2); //Guarda los datos del formulario en la variable data
                 fetch("<?php echo $ruta; ?>", {
                     method: "POST",
@@ -130,7 +132,33 @@ $ruta = "./php/consulta_". $tabla .".php";
                 .catch(function(error) {
                     console.log(error);
                 });
-            });
+            }
+
+            function eliminar(tabla, campo, id){
+                let data = new FormData();
+                data.append('tabla',tabla);
+                data.append('campo',campo);
+                data.append('id',id);
+                let msg = confirm("¿Esta seguro de eliminar este registro?, se eliminara para siempre");
+                if (msg == true) {
+                    fetch("./php/eliminar.php", {
+                        method: "POST",
+                        body: data
+                    })
+                    .then((res) => {
+                        return res.text();
+                    })
+                        .then((data1) => {
+                            alert(data1);
+                            consultar();
+                        })
+                        .catch(function(error) {
+                            console.log(error);
+                        });
+                } else {
+                    alert("Eliminación Cancelada");
+                }
+            }
             </script>
 
        <?php }?>

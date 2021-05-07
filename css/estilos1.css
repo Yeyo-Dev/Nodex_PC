@@ -6,6 +6,7 @@ body { /* Cuerpo del login*/
     font-family: verdana, arial; 
     height: 100px; 
 }
+
 #reloj-frame{
     border-style: none;
     border-radius: 50%;
@@ -186,12 +187,15 @@ body { /* Cuerpo del login*/
     background-size: cover; 
 }
 
+/*
 .formularios {
     background: url(../img/Fondo3.jpg) no-repeat center top;
     margin: 0;
     padding: 0; 
     background-size: cover; 
+    
 }
+*/
 
 .Logo {
     width: 100px;

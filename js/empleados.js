@@ -1,7 +1,7 @@
 document.getElementById("Pedir_Dat").addEventListener("submit",(e)=>{
     e.preventDefault();
     let data = new FormData(document.getElementById("Pedir_Dat"));
-    fetch('./php/usuarios_altas.php',{
+    fetch('./php/empleados_altas.php',{
         method: "POST",
         body: data
     })
@@ -15,3 +15,4 @@ document.getElementById("Pedir_Dat").addEventListener("submit",(e)=>{
     console.log(err);
     });
 });
+

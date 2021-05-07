@@ -1,5 +1,5 @@
 <?php
-require_once ("conexion.php");
+require("conexion.php");
 
 error_reporting(0);
 $buscar = $_POST['buscar'];
@@ -14,12 +14,12 @@ if (empty($buscar) || $buscar=""){
 $res=$mysqli->query($sql);
 $totCuentas = mysqli_num_rows($res);
 
-
 if ($totCuentas>0) {
 
 		while ($rowCunt = mysqli_fetch_array($res)) {
 			echo '<div id="'.$rowCunt['usuario_id'].'" class="tarjeta">';
 			echo '<p><b>Id: </b>'.$rowCunt['usuario_id'].'</p><br>	<h3>'.$rowCunt['usuario_nombre'].'</h3><br>	<p><b>nickname: </b>'.$rowCunt['usuario_usuario'].'</p>';
+			?><center><button>Modificar</button><button onclick="eliminar('usuarios','usuario_id', '<?php echo $rowCunt['usuario_id'];?>')">Eliminar</button></center><?php
 			echo '</div>';
 		}
 

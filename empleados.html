@@ -1,4 +1,4 @@
-<DOCTYPE html>
+<!DOCTYPE html>
     <html lang="es">
         <head>
             <meta charset="UTF-8">
@@ -9,10 +9,11 @@
             <script src="./js/sesion.js"></script>
 
         </head>
-        <div class="fondo">
-        <body class = "formularios">
+        
+        <body class = "fondo">
+            <div class="formularios">
             <img class="Logo" src="img/Nodex.png" alt="Logo de Nodex-PC">
-           <form class="form" name="Pedir_Dat" method = "POST" action = "php/empleados_altas.php" enctype = "multipart/form-data">
+           <form class="form" id="Pedir_Dat">
                <h1>Formulario Empleados</h1>
                <table><tr> <td>
                <input class="controls" type="text" name="empleado_id" id="empleado_id" placeholder="Inserte ID de empleado">
@@ -23,25 +24,27 @@
                <input class="image" type="file" name="empleado_foto" id="empleado_foto" placeholder="Foto" hidden onchange="visualizarFoto()"><br>
                <input class="controls" type="text" name="empleado_apellidoP" id="empleado_apellidoP" placeholder="Apellido Paterno">
                <input class="controls" type="text" name="empleado_apellidoM" id="empleado_apellidoM" placeholder="Apellido Materno">
-               <input class="controls" type="text" name="empleado_nacimiento" id="empleado_nacimiento" placeholder="Fecha de nacimiento">
+               <input class="controls" type="date" name="empleado_nacimiento" id="empleado_nacimiento" placeholder="Fecha de nacimiento">
                <input class="controls" type="text" name="empleado_direccion" id="empleado_direccion" placeholder="Direccion">
                <input class="controls" type="text" name="empleado_tel_fijo" id="empleado_tel_fijo" placeholder="Telefono fijo">
                <input class="controls" type="text" name="empleado_tel_cel" id="empleado_tel_cel" placeholder="Telefono celular">
                <input class="controls" type="text" name="empleado_puesto" id="empleado_puesto" placeholder="Puesto">
-               <input class="controls" type="text" name="empleado_contraseña" id="empleado_contraseña" placeholder="Contraseña">
+               <input class="controls" type="text" name="empleado_usuario" id="empleado_usuario" placeholder="Usuario">
                
                <center>
                <table class="tabla">
                    <tr>
                     <td></td>
-                    <td><input class="button" type="submit" value="Registar"></td>
-                    <td><input class="button" type="submit" value="Nuevo"></td>
-                    <td><a href="index.html"><input class="button" type="submit" value="Cerrar"></a></td>
+                    <td><input class="button" type="submit" value="Guardar"></td>
+                    <td><input class="button" type="reset" value="Limpiar"></td>
+                    <td><a href="./consulta.php?tabla=empleados"><input class="button" type="button" value="Buscar"></a></td>
+                    <td><a href="index.html"><input class="button" type="button" value="Cerrar"></a></td>
                     <td></td>
                    </tr>
                </table>
                </center>
             </form>
+            <script src="js/empleados.js"></script>
            <script>   
                 function visualizarFoto(){
                     let file = document.getElementById('empleado_foto').files[0]

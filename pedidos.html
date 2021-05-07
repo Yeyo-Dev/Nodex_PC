@@ -8,10 +8,11 @@
             <link rel="stylesheet" href="css/estilos1.css">
             <script src="./js/sesion.js"></script>
         </head>
-        <div class="fondo">
-        <body class = "formularios">
+        
+        <body class = "fondo">
+        <div class="formularios">
             <img class="Logo" src="img/Nodex.png" alt="Logo de Nodex-PC">
-           <form class="form" name="Pedir_Dat" method = "POST" action = "php/empleados_altas.php" enctype = "multipart/form-data">
+           <form class="form" id="Pedir_Dat">
                <h1>Formulario Pedidos</h1>
                <input class="controls" type="text" name="pedidos_id" id="pedidos_id" placeholder="Inserte Folio">
                <input class="controls" type="text" name="proveedores_id" id="proveedores_id" placeholder="Inserte ID de proveedor">
@@ -24,8 +25,9 @@
                <table class="tabla">
                    <tr>
                     <td></td>
-                    <td><input class="button" type="submit" value="Registar"></td>
-                    <td><input class="button" type="submit" value="Nuevo"></td>
+                    <td><input class="button" type="submit" value="Guardar"></td>
+                    <td><input class="button" type="reset" value="Limpiar"></td>
+                    <td><a href="./consulta.php?tabla=pedidos"><input class="button" type="button" value="Buscar"></a></td>
                     <td><a href="index.html"><input class="button" type="button" value="Cerrar"></a></td>
                     <td></td>
                    </tr>

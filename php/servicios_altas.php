@@ -1,15 +1,15 @@
 <?php
 include ('conexion.php');
 
-$servicios_folio=$_POST['servicios_folio'];
-$servicios_tipo=$_POST['servicios_tipo'];
-$servicios_fecha=$_POST['servicios_fecha'];
-$servicios_hora=$_POST['servicios_hora'];
-$clientes_id=$_POST['clientes_id'];
-$servicios_precio=$_POST['servicios_precio']; 
+$servicio_folio=$_POST['servicio_folio'];
+$servicio_tipo=$_POST['servicio_tipo'];
+$servicio_fecha=$_POST['servicio_fecha'];
+$servicio_hora=$_POST['servicio_hora'];
+$cliente_id=$_POST['servicio_id_cliente'];
+$servicio_precio=$_POST['servicio_precio']; 
 
-$query = "INSERT INTO (servicios_folio, servicios_tipo, servicios_fecha, servicios_hora, clientes_id, servicios_precio) 
-VALUES('$servicios_folio','$servicios_tipo', '$servicios_fecha', '$servicios_hora', '$clientes_id','$servicios_precio')";
+$query = "INSERT INTO apartado_servicios(servicio_folio, servicio_tipo, servicio_fecha, servicio_hora, cliente_id, servicio_precio) 
+VALUES('$servicio_folio','$servicio_tipo', '$servicio_fecha', '$servicio_hora', '$cliente_id','$servicio_precio')";
 $resultado=$mysqli->query($query);
 
 if ($resultado>0){

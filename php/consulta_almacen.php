@@ -44,7 +44,7 @@ if ($totCuentas>0) {
             </td>
         </tr>
         <tr>
-			<td><center><button>Modificar</button><button>Eliminar</button></center></td>
+			<td><center><button>Modificar</button><button onclick="eliminar('almacen','almacen_id', '<?php echo $rowCunt['almacen_id'];?>')">Eliminar</button></center></td>
 		</tr>
     </table>
 </div>

@@ -1,7 +1,7 @@
 document.getElementById("Pedir_Dat").addEventListener("submit",(e)=>{
     e.preventDefault();
     let data = new FormData(document.getElementById("Pedir_Dat"));
-    fetch('./php/usuarios_altas.php',{
+    fetch('./php/servicios_altas.php',{
         method: "POST",
         body: data
     })

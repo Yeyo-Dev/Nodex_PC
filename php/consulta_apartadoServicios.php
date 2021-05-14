@@ -19,7 +19,7 @@ if ($totCuentas>0) {
 		while ($rowCunt = mysqli_fetch_array($res)) {
 			echo '<div id="'.$rowCunt['servicio_folio'].'" class="tarjeta">';
 			echo '<p><b>Folio: </b>'.$rowCunt['servicio_folio'].'</p><br><p><b>Tipo: </b>'.$rowCunt['servicio_tipo'].'</p><br>	<p><b>Fecha: </b>'.$rowCunt['servicio_fecha'].'</p><br>	<p><b>Hora: </b>'.$rowCunt['servicio_hora'].'</p><br>	<p><b>Cliente: </b>'.$rowCunt['cliente_id'].'</p><br>	<p><b>Hora: </b>'.$rowCunt['servicio_hora'].'</p><br>	<p><b>Precio: </b>'.$rowCunt['servicio_precio'].'</p><br>	<p><b>Terminado: </b>'.$rowCunt['servicio_terminado'].'</p>';
-			?><center><button>Modificar</button> <button onclick="eliminar('apartado_servicios','servicio_folio', '<?php echo $rowCunt['servicio_folio'];?>')">Eliminar</button></center><?php
+			?><center><button onclick="modificar('apartadoServicios','<?php echo $rowCunt['servicio_folio'];?>' )">Modificar</button> <button onclick="eliminar('apartado_servicios','servicio_folio', '<?php echo $rowCunt['servicio_folio'];?>')">Eliminar</button></center><?php
 			echo '</div>';
 		}
 

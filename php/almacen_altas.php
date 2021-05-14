@@ -13,7 +13,6 @@ $almacen_precioM=$_POST['almacen_precioM'];
 $query = "INSERT INTO almacen(almacen_id, almacen_nombre, almacen_foto, almacen_tipo, almacen_descripcion, almacen_precioI, almacen_cantidad, almacen_precioM) 
 VALUES('$almacen_id','$almacen_nombre', '$almacen_foto', '$almacen_tipo', '$almacen_descripcion','$almacen_precioI','$almacen_cantidad','$almacen_precioM')";
 $resultado=$mysqli->query($query);
-
 if ($resultado>0){
     echo "Datos guardados correctamente";
 }else{

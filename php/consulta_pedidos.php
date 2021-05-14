@@ -15,7 +15,6 @@ $totCuentas = mysqli_num_rows($res);
 
 
 if ($totCuentas>0) {
-    pedido_folio	proveedor_id	pedido_producto	pedido_cantidad	pedido_precio	pedido_fecha
 		while ($rowCunt = mysqli_fetch_array($res)) {
 			echo '<div id="'.$rowCunt['pedido_folio'].'" class="tarjeta">';
 			echo '<p><b>Folio: </b>'.$rowCunt['pedido_folio'].'</p><br>	<h3>Provedor:'.$rowCunt['proveedor_id'].'</h3><br>	<p><b>Producto: </b>'.$rowCunt['pedido_producto'].'<b>Cantidad: </b>'.$rowCunt['pedido_cantidad'].'</p><br>	<p><b>Precio Total: </b>$'.$rowCunt['producto_precio'].'</p><br><p><b>Fecha: </b>'.$rowCunt['pedido_fecha'].'</p>';

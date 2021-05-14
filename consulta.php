@@ -1,9 +1,14 @@
 
 <?php
-
+session_start();
 $tabla = $_GET['tabla'];
 error_reporting(0);
 $ruta = "./php/consulta_". $tabla .".php";
+if($tabla  == "empleados" || $tabla  == "usuarios" ){
+    if($_SESSION['nivel'] == "user"){
+        header("./index.html");
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,8 +32,8 @@ $ruta = "./php/consulta_". $tabla .".php";
             margin: 2%;
             padding:1%;
             box-shadow: 2px 2px 10px rgb(38, 1, 8);
-            width: 25%;
-            height: 550px;
+            width: 35%;
+            height: auto;
             display: inline-block;
         }
         .tarjeta .img{
@@ -82,22 +87,28 @@ $ruta = "./php/consulta_". $tabla .".php";
             border-style: none;
             border-radius: 5px;
         }
+        .NR{
+            color: red;
+            weight: 3px;
+        }
     </style>
 </head>
 <body>
 <center>
     <form class="b-form" id="b-form">
+        <a style="text-decoration: none; left: 97.5%; position: fixed; font-weight:4px; color:white; background-color:red; border-radius:50%; width: 15px; height: 15px; padding: 0.5%; box-shadow: 2px 2px 10px rgb(38, 1, 87);" href="javascript:window.history.back();">X</a>
         <input class="search" spellcheck="false" type="search" name="buscar" id="buscar" autocomplete="off" />
     </form>
 </center>
-
-        <div id="Consulta">
+<center>
+        <div id="Consulta"> <center>
             <?php if(!file_exists($ruta)) { 
                 echo "Error, tabla no localizada";
-            }?>
-        </div>
+            }?></center>
+        </div></center>
         <?php
         if(file_exists($ruta)) { ?>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
             <script>
             fetch("<?php echo $ruta; ?>")
@@ -134,32 +145,71 @@ $ruta = "./php/consulta_". $tabla .".php";
                 });
             }
 
-            function eliminar(tabla, campo, id){
-                let data = new FormData();
-                data.append('tabla',tabla);
-                data.append('campo',campo);
-                data.append('id',id);
-                let msg = confirm("¿Esta seguro de eliminar este registro?, se eliminara para siempre");
-                if (msg == true) {
-                    fetch("./php/eliminar.php", {
-                        method: "POST",
-                        body: data
-                    })
-                    .then((res) => {
-                        return res.text();
-                    })
-                        .then((data1) => {
-                            alert(data1);
-                            consultar();
+            async function eliminar(tabla, campo, id){
+                let res = await checkPassword();
+                if(res == 'true'){
+                    let data = new FormData();
+                    data.append('tabla',tabla);
+                    data.append('campo',campo);
+                    data.append('id',id);
+                    let msg = confirm("¿Esta seguro de eliminar este registro?, se eliminara para siempre");
+                    if (msg == true) {
+                        fetch("./php/eliminar.php", {
+                            method: "POST",
+                            body: data
                         })
-                        .catch(function(error) {
-                            console.log(error);
-                        });
-                } else {
-                    alert("Eliminación Cancelada");
+                        .then((res) => {
+                            return res.text();
+                        })
+                            .then((data1) => {
+                                alert(data1);
+                                consultar();
+                            })
+                            .catch(function(error) {
+                                console.log(error);
+                            });
+                    } else {
+                        alert("Eliminación Cancelada");
+                    }
+                }else if(res == 'false'){
+                    alert("Contraseña incorrecta");
                 }
             }
+
+            async function checkPassword(){
+                let pass = await prompt("Introduce tu contraseña");
+                let data = new FormData();
+                data.append("password", pass);
+                let respuesta = await fetch("./php/checkPassword.php",{
+                    method: "POST",
+                    body: data
+                })
+                .then((res) => res.text())
+                .catch((e) => {console.log(e)})
+                return respuesta;
+            }
+            
+            async function modificar(tabla, id) {
+                let res = await checkPassword();
+                    if(res == 'true'){
+                        const a = document.createElement('a');
+                        a.href = `./Modif/Form_${tabla}.php?id=${id}`;
+                        a.target = '_blank';
+                        a.click();
+                    }else if(res == 'false'){
+                        alert("Contraseña incorrecta");
+                    }
+                
+            }
             </script>
+                    <script>   
+                        function visualizarFoto(inputFile, outputFoto){
+                            let file = document.getElementById(inputFile).files[0];
+                            let img = URL.createObjectURL(file);
+                            console.log(img);
+                            document.getElementById('img-foto').setAttribute("src",img);
+                        }
+                </script>
 
        <?php }?>
 

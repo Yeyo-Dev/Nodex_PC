@@ -44,14 +44,13 @@ if ($totCuentas>0) {
             </td>
         </tr>
         <tr>
-			<td><center><button>Modificar</button><button onclick="eliminar('almacen','almacen_id', '<?php echo $rowCunt['almacen_id'];?>')">Eliminar</button></center></td>
+			<td><center><button onclick="modificar( 'almacen', '<?php echo $rowCunt['almacen_id'];?>')">Modificar</button><button onclick="eliminar('almacen','almacen_id', '<?php echo $rowCunt['almacen_id'];?>')">Eliminar</button></center></td>
 		</tr>
     </table>
 </div>
 <?php
 		}
 
-		
 } else {
 	echo '<center><h1 class="NR">No se encontraron registros </h1></center>';
 }

@@ -14,6 +14,7 @@ if($totCuentas==1){
     session_start();
     $_SESSION['nombre'] =  $nombre;
     $_SESSION['nivel']  = $nivel;
+    $_SESSION['password']  =  $contrasena;
     // if (isset($_COOKIE[$nombre])) {
     //     $cont = $_COOKIE[$nombre];
     //     setcookie($nombre,1,time() + 3600);

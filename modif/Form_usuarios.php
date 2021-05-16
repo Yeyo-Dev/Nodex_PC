@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="../css/estilos1.css">
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <?php
 require_once ("../php/conexion.php");
 $id = $_GET['id'];
@@ -46,7 +46,7 @@ if ($totCuentas == 1) {
                   return res.text();
                })
                .then((res1)=>{
-                  alert(res1);
+                  swal.fire(res1);
                   window.close();
                })
                .catch((err)=>{

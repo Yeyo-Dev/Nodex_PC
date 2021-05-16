@@ -14,20 +14,21 @@ if ($totCuentas >0) {
    while ($rowCunt = mysqli_fetch_array($res)) {
 ?> 
  <form class="form" id="Pedir_Dat">
-               <h1>Formulario Almacén</h1>
+
+
+ <h1>Formulario Proveedores</h1>
                <table><tr> <td>
-               <input disabled onlyread value="<?php echo $rowCunt['almacen_id']?>" class="controls" type="text" name="almacen_id" id="almacen_id" placeholder="Inserte ID">
-               <input required value="<?php echo $rowCunt['almacen_nombre'];?>" class="controls" type="text" name="almacen_nombre" id="almacen_nombre" placeholder="Nombre del producto">
+               <input disabled onlyread value="<?php echo $rowCunt['proveedor_id']?>" class="controls" type="text" name="proveedor_id" id="proveedor_id" placeholder="Inserte ID de Proveedor">
+               <input class="controls" type="text" name="proveedor_nombre" id="proveedor_nombre" placeholder="Nombre(s) del proveedor">
                </td><td>
-               <img alt="Foto" id="img-foto" src="data:image/jpg;base64,<?php echo  base64_encode($rowCunt['almacen_foto']); ?>" onclick="document.getElementById('almacen_foto').click()">
+               <img alt="Foto" id="img-foto" src="data:image/jpg;base64,<?php echo  base64_encode($rowCunt['almacen_fotografia']); ?>" onclick="document.getElementById('proveedor_fotografia').click()">
                </td></tr></table>
-               <input value="" class="image" type="file" name="almacen_foto" id="almacen_foto" hidden onchange="visualizarFoto()" placeholder="Foto"><br>
-               <input required value="<?php echo $rowCunt['almacen_tipo']?>" class="controls" type="text" name="almacen_tipo" id="almacen_tipo" placeholder="Tipo de producto">
-               <input required value="<?php echo $rowCunt['almacen_descripcion']?>" class="controls" type="text" name="almacen_descripcion" id="almacen_descripcion" placeholder="Descripción">
-               <input required value="<?php echo $rowCunt['almacen_precioI']?>" class="controls" type="text" name="almacen_precioI" id="almacen_precioI" placeholder="Precio individual">
-               <input required value="<?php echo $rowCunt['almacen_cantidad']?>" class="controls" type="text" name="almacen_cantidad" id="almacen_cantidad" placeholder="Cantidad">
-               <input required value="<?php echo $rowCunt['almacen_precioM']?>" class="controls" type="text" name="almacen_precioM" id="almacen_precioM" placeholder="Precio mayoreo">
-               
+               <input required value="<?php echo $rowCunt['proveedor_nombre']?>" class="image" type="file" name="proveedor_fotografia" id="proveedor_fotografia" placeholder="Foto" onchange="visualizarFoto()"><br>
+               <input required value="<?php echo $rowCunt['proveedor_apellidoP']?>" class="controls" type="text" name="proveedor_apellidoP" id="proveedor_apellidoP" placeholder="Apellido Paterno">
+               <input required value="<?php echo $rowCunt['proveedor_apellidoM']?>" class="controls" type="text" name="proveedor_apellidoM" id="proveedor_apellidoM" placeholder="Apellido Materno">
+               <input required value="<?php echo $rowCunt['proveedor_tipoProducto']?>" class="controls" type="text" name="proveedor_tipoProducto" id="proveedor_tipoProducto" placeholder="Tipo de producto">
+               <input required value="<?php echo $rowCunt['proveedor_email']?>" class="controls" type="text" name="proveedor_email" id="proveedor_email" placeholder="E-mail">
+
                <center>
                    <table class="tabla">
                        <tr>

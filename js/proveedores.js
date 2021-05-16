@@ -9,7 +9,7 @@ document.getElementById("Pedir_Dat").addEventListener("submit",(e)=>{
         return res.text();
     })
     .then((res1)=>{
-        alert(res1);
+        swal.fire(res1);
     })
     .catch((err)=>{
     console.log(err);

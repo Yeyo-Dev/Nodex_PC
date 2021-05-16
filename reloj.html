@@ -54,6 +54,7 @@
   segundos.style.width = '0';
   segundos.style.transformOrigin = '50% 100%';
   segundos.style.transition = 'transform 1s ease';
+  segundos.style.boxShadow = '2px 2px 10px rgb(38, 1, 8)';
     
   /*CREAR MANECILLA MINUTOS Y APLICAR ESTILOS*/
   var minutos = document.createElement('div');
@@ -68,7 +69,8 @@
   minutos.style.width = '0';
   minutos.style.transformOrigin = '50% 100%';
   minutos.style.transition = 'transform 1s ease';
-    
+  minutos.style.boxShadow = '2px 2px 10px rgb(38, 1, 8)';
+  
   /*CREAR MANECILLA HORAS Y APLICAR ESTILOS*/
   var horas = document.createElement('div');
   horas.id = 'relojHoras';
@@ -82,19 +84,8 @@
   horas.style.width = '0';
   horas.style.transformOrigin = '50% 100%';
   horas.style.transition = 'transform 1s ease';
-    
-  /*CREAR RELOJ DIGITAL Y APLICAR ESTILOS*/
-  var horad = document.createElement('div');
-  horad.id = 'horad';
-  horad.class= 'reloj horad';
-  divReloj.appendChild(horad);
-  horad.style.position = 'relative';
-  horad.style.height = '13%';
-  horad.style.top = '2%';
-  horad.style.textAlign = 'center';
-  horad.style.color = 'white';
-  horad.style.fontSize = '500%';
-  
+  horas.style.boxShadow = '2px 2px 10px rgb(38, 1, 8)';  
+
   }  
   
   function crearHoraReferencia() {
@@ -129,32 +120,10 @@
       document.getElementById('relojHoras').style.transform='rotate('+ rotHor +'deg)';
   }
   
-  function mostrarHora(tiempo) {
-    var segundos = tiempo.getSeconds();
-    var minutos = tiempo.getMinutes();
-    var horas = tiempo.getHours();
-    var hora = document.getElementById('horad');
-    if ( segundos < 10 )
-    {
-      segundos = '0'+segundos;
-    }
-    
-    if ( minutos < 10 )
-    {
-      minutos = '0'+minutos;
-    }
-    
-    if ( horas < 10 )
-    {
-      horas = '0'+horas;
-    }
-    
-
-  }
+  
   
   function actualizarReloj (horaRef, horaActual)
   {
-    mostrarHora(horaActual);
     calcularRotacionManecillas(horaRef, horaActual)
   }
   

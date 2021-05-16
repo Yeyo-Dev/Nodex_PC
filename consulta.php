@@ -152,8 +152,25 @@ if($tabla  == "empleados" || $tabla  == "usuarios" ){
                     data.append('tabla',tabla);
                     data.append('campo',campo);
                     data.append('id',id);
-                    let msg = confirm("¿Esta seguro de eliminar este registro?, se eliminara para siempre");
-                    if (msg == true) {
+
+                    const swalWithBootstrapButtons = Swal.mixin({
+                    customClass: {
+                        confirmButton: 'btn btn-success',
+                        cancelButton: 'btn btn-danger'
+                    },
+                    buttonsStyling: false
+                    })
+
+                    swalWithBootstrapButtons.fire({
+                    title: '¿Esta seguro de eliminar este registro?',
+                    text: "Se eliminara para siempre",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Si, borralo',
+                    cancelButtonText: 'No, cancelalo',
+                    reverseButtons: true
+                    }).then((result) => {
+                    if (result.isConfirmed) {
                         fetch("./php/eliminar.php", {
                             method: "POST",
                             body: data
@@ -162,22 +179,52 @@ if($tabla  == "empleados" || $tabla  == "usuarios" ){
                             return res.text();
                         })
                             .then((data1) => {
-                                alert(data1);
+                                if (data1 == 'Registro Eliminado Permanentemente'){
+                                swalWithBootstrapButtons.fire(
+                                '¡Eliminado!',
+                                'Registro ha sido eliminado con exito',
+                                'success'
+                                );
+                                }else if (data1 == 'Error al Eliminar Registro'){
+                                    swalWithBootstrapButtons.fire(
+                                    'Error',
+                                    'Error al Eliminar Registro',
+                                    'error'
+                                    )
+
+                                }
                                 consultar();
                             })
                             .catch(function(error) {
                                 console.log(error);
                             });
-                    } else {
-                        alert("Eliminación Cancelada");
+
+                    } else if (result.dismiss === Swal.DismissReason.cancel) {
+                        swalWithBootstrapButtons.fire(
+                        'Cancelado',
+                        'Tus registros estan seguros',
+                        'success'
+                        )
                     }
+                    })
+
                 }else if(res == 'false'){
-                    alert("Contraseña incorrecta");
+                    swal.fire("Contraseña incorrecta","",'warning');
                 }
             }
 
             async function checkPassword(){
-                let pass = await prompt("Introduce tu contraseña");
+                const { value: pass } = await Swal.fire({
+                    title: 'Enter your password',
+                    input: 'password',
+                    inputLabel: 'Password',
+                    inputPlaceholder: 'Introduzca su contraseña',
+                    inputAttributes: {
+                        maxlength: 35,
+                        autocapitalize: 'off',
+                        autocorrect: 'off'
+                    }
+                    })
                 let data = new FormData();
                 data.append("password", pass);
                 let respuesta = await fetch("./php/checkPassword.php",{
@@ -197,7 +244,7 @@ if($tabla  == "empleados" || $tabla  == "usuarios" ){
                         a.target = '_blank';
                         a.click();
                     }else if(res == 'false'){
-                        alert("Contraseña incorrecta");
+                        swal.fire("Contraseña incorrecta");
                     }
                 
             }

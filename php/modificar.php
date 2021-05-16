@@ -69,12 +69,12 @@ try{
         $query = $query ."empleado_id='$id', empleado_nombre='$empleado_nombre', empleado_fotografia='$empleado_fotografia, empleado_apellidoP='$empleado_apellidoP', empleado_apellidoM='$empleado_apellidoM', empleado_fechaNacimiento='$empleado_fechaNacimiento', empleado_direccion='$empleado_direccion', empleado_email='$empleado_email', empleado_telFijo='$empleado_telFijo', empleado_telCel='$empleado_telCel', empleado_cargo='$empleado_cargo', empleado_usuario='$empleado_usuario' WHERE empleado_id='$id'";
 
     }elseif($tabla == "pedidos"){
-        $pedido_folio=$_POST['pedido_folio'];
+        $pedido_folio=$_POST['pedidos_folio'];
         $proveedor_id=$_POST['proveedor_id'];
-        $pedido_producto=$_POST['pedido_producto'];
-        $pedido_cantidad=$_POST['pedido_cantidad'];
-        $pedido_precio=$_POST['pedido_precio'];
-        $pedido_fecha=$_POST['pedido_fecha'];
+        $pedido_producto=$_POST['pedidos_producto'];
+        $pedido_cantidad=$_POST['pedidos_cantidad'];
+        $pedido_precio=$_POST['pedidos_precio'];
+        $pedido_fecha=$_POST['pedidos_fecha'];
 
         $query = $query ."pedido_folio='$id', proveedor_id='$proveedor_id', pedido_producto='$pedido_producto, pedido_cantidad='$pedido_cantidad', pedido_precio='$pedido_precio', pedido_fecha='$pedido_fecha' WHERE pedido_folio='$id'";
 

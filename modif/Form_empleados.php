@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="../css/estilos1.css">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-<?php
+<script src="../js/sesion.js"></script>
+s<?php
 require_once ("../php/conexion.php");
 $id = $_GET['id'];
 $sql = "SELECT * FROM almacen WHERE almacen_id='$id';";
@@ -66,7 +67,7 @@ if ($totCuentas >0) {
     })
     .then((res1)=>{
         swal.fire(res1);
-        window.close();
+        .then(()=>  window.close())
     })
     .catch((err)=>{
     console.log(err);

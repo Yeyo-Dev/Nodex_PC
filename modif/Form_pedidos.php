@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="../css/estilos1.css">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="../js/sesion.js"></script>
 <?php
 require_once ("../php/conexion.php");
 $id = $_GET['id'];
@@ -47,7 +48,7 @@ if ($totCuentas == 1) {
                })
                .then((res1)=>{
                   swal.fire(res1);
-                  window.close();
+                  .then(()=>  window.close())
                })
                .catch((err)=>{
                console.log(err);

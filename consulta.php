@@ -17,6 +17,7 @@ if($tabla  == "empleados" || $tabla  == "usuarios" ){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulta</title>
+    <script src="./js/sesion.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
     <style>
         body{
@@ -129,6 +130,10 @@ if($tabla  == "empleados" || $tabla  == "usuarios" ){
                 consultar();                
             });
             
+            window.onfocus = function() {
+                consultar();
+            }
+
             function consultar(){
                 let datax = new FormData(formulario2); //Guarda los datos del formulario en la variable data
                 fetch("<?php echo $ruta; ?>", {

@@ -2,10 +2,10 @@
 <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="../js/sesion.js"></script>
-s<?php
+<?php
 require_once ("../php/conexion.php");
 $id = $_GET['id'];
-$sql = "SELECT * FROM almacen WHERE almacen_id='$id';";
+$sql = "SELECT * FROM empleados WHERE empleado_id='$id';";
 
 $res=$mysqli->query($sql);
 $totCuentas = mysqli_num_rows($res);
@@ -22,7 +22,7 @@ if ($totCuentas >0) {
                <input disabled onlyread value="<?php echo $rowCunt['empleado_id']?>" class="controls" type="text" name="empleado_id" id="empleado_id" placeholder="Inserte ID de empleado">
                <input class="controls" type="text" name="empleado_nombre" id="empleado_nombre" placeholder="Nombre del empleado">
                </td><td>
-               <img alt="Foto" id="img-foto" src="./img/none.jpg" onclick="document.getElementById('empleado_foto').click()">
+               <img alt="Foto" id="img-foto" src="data:image/jpg;base64,<?php echo  base64_encode($rowCunt['empleado_fotografia']); ?>" onclick="document.getElementById('empleado_fotografia').click()">
                </td></tr></table>
                <input value="<?php echo $rowCunt['empleado_fotografia'];?>" class="image" type="file" name="empleado_fotografia" id="empleado_fotografia" placeholder="Foto" hidden onchange="visualizarFoto()"><br>
                <input required value="<?php echo $rowCunt['empleado_apellidoP'];?>" class="controls" type="text" name="empleado_apellidoP" id="empleado_apellidoP" placeholder="Apellido Paterno">

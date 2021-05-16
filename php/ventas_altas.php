@@ -15,7 +15,7 @@ VALUES('$venta_id','$almacen_id', '$empleado_id', '$cliente_id', '$venta_fecha',
 $resultado=$mysqli->query($query);
 
 if ($resultado>0){ ?>
-            <h1>Datos guardados correctamente</h1>
+            Datos guardados correctamente
         <?php }else { ?>
-        <h1>Error al guardar los datos</h1>
+        Error al guardar los datos
         <?php } ?>

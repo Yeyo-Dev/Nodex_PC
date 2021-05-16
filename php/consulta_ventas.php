@@ -21,7 +21,7 @@ if ($totCuentas>0) {
 			echo '<div id="'.$rowCunt['venta_folio'].'" class="tarjeta">';
 			echo '<p><b>Folio: </b>'.$rowCunt['venta_folio'].'</p><br>	<h3>Producto: '.$rowCunt['producto_id'].'</h3><br>	<p><bEmpleado: </b>'.$rowCunt['empleado_id'].'</p>';
             echo '<p><b>Cliente: </b>'.$rowCunt['cliente_id'].'</p><br><p><b>Fecha: </b>'.$rowCunt['venta_fecha'].'</p><br><p><b>Cantidad: </b>'.$rowCunt['venta_cantidad'].'</p><br><p><b>Precio: </b>'.$rowCunt['venta_precio'].'</p><br>';
-            ?><center><button>Modificar</button><button onclick="eliminar('ventas','venta_folio', '<?php echo $rowCunt['venta_folio'];?>')">Eliminar</button></center><?php
+            ?><center><button onclick="modificar('ventas', '<?php echo $rowCunt['venta_folio'];?>')">Modificar</button><button onclick="eliminar('ventas','venta_folio', '<?php echo $rowCunt['venta_folio'];?>')">Eliminar</button></center><?php
 			echo '</div>';
 		}
 

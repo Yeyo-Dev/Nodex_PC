@@ -3,10 +3,10 @@ require_once ("conexion.php");
 
 error_reporting(0);
 $buscar = $_POST['buscar'];
-$busqueda = "SELECT * FROM proveedor WHERE proveedor_id LIKE '%". $buscar. "%' OR proveedor_nombre LIKE '%" . $buscar ."%' OR proveedor_tipoProducto LIKE '%" . $buscar ."%';";
+$busqueda = "SELECT * FROM proveedores WHERE proveedor_id LIKE '%". $buscar. "%' OR proveedor_nombre LIKE '%" . $buscar ."%' OR proveedor_tipoProducto LIKE '%" . $buscar ."%';";
 
 if (empty($buscar) || $buscar=""){
-	$sql = "SELECT * FROM proveedor ORDER BY proveedor_nombre ASC";
+	$sql = "SELECT * FROM proveedores ORDER BY proveedor_nombre ASC";
 }else{
 	$sql = $busqueda;
 }
@@ -27,7 +27,7 @@ if ($totCuentas>0) {
 			</td>
             <td>
                 <p><b>Id: </b><?php echo $rowCunt['proveedor_id']; ?></p><br>
-                <h3><?php echo echo $rowCunt['proveedor_nombre'] . ' '. $rowCunt['proveedor_apellidoP'] . ' '. $rowCunt['proveedor_apellidoM']; ?></h3><br>
+                <h3><?php echo $rowCunt['proveedor_nombre'] . ' '. $rowCunt['proveedor_apellidoP'] . ' '. $rowCunt['proveedor_apellidoM']; ?></h3><br>
                 <p><b>tipo: </b><?php echo $rowCunt['proveedor_tipoProducto']; ?></p><br>
             </td>
         </tr>
@@ -41,7 +41,7 @@ if ($totCuentas>0) {
             </td>
         </tr>
         <tr>
-			<td><center><button>Modificar</button><button onclick="eliminar('proveedor','proveedor_id', '<?php echo $rowCunt['proveedor_id'];?>')">Eliminar</button></center></td>
+			<td><center><button onclick="modificar( 'proveedores', '<?php echo $rowCunt['proveedor_id'];?>')">Modificar</button><button onclick="eliminar('proveedores','proveedor_id', '<?php echo $rowCunt['proveedor_id'];?>')">Eliminar</button></center></td>
 		</tr>
     </table>
 </div>

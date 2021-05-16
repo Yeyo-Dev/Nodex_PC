@@ -5,7 +5,7 @@
 <?php
 require_once ("../php/conexion.php");
 $id = $_GET['id'];
-$sql = "SELECT * FROM clientes WHERE clientes_id=" . $id;
+$sql = "SELECT * FROM clientes WHERE clientes_id='" . $id."';";
 
 $res=$mysqli->query($sql);
 $totCuentas = mysqli_num_rows($res);

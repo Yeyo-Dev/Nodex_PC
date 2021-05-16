@@ -220,9 +220,9 @@ if($tabla  == "empleados" || $tabla  == "usuarios" ){
 
             async function checkPassword(){
                 const { value: pass } = await Swal.fire({
-                    title: 'Enter your password',
+                    title: 'Introduce tu contraseña',
                     input: 'password',
-                    inputLabel: 'Password',
+                    inputLabel: 'Contraseña: ',
                     inputPlaceholder: 'Introduzca su contraseña',
                     inputAttributes: {
                         maxlength: 35,

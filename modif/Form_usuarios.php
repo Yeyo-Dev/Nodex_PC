@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="../css/estilos1.css">
+
+<link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet"><link rel="stylesheet" href="../css/estilos1.css">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="../js/sesion.js"></script>
 <?php

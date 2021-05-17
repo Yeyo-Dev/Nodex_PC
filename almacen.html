@@ -17,17 +17,17 @@
            <form class="form" id="Pedir_Dat">
                <h1>Formulario Almacén</h1>
                <table><tr> <td>
-               <input required class="controls" type="text" name="almacen_id" id="almacen_id" placeholder="Inserte ID">
-               <input required class="controls" type="text" name="almacen_nombre" id="almacen_nombre" placeholder="Nombre del producto">
+               <input required class="controlsalmacen" type="text" name="almacen_id" id="almacen_id" placeholder="Inserte ID">
+               <input required class="controlsalmacen" type="text" name="almacen_nombre" id="almacen_nombre" placeholder="Nombre del producto">
                </td><td>
                <img alt="Foto" id="img-foto" src="./img/empty.png" onclick="document.getElementById('almacen_foto').click()">
                </td></tr></table>
                <input required class="image" type="file" name="almacen_foto" id="almacen_foto" hidden onchange="visualizarFoto()" placeholder="Foto"><br>
-               <input required class="controls" type="text" name="almacen_tipo" id="almacen_tipo" placeholder="Tipo de producto">
-               <input required class="controls" type="text" name="almacen_descripcion" id="almacen_descripcion" placeholder="Descripción">
-               <input required class="controls" type="text" name="almacen_precioI" id="almacen_precioI" placeholder="Precio individual">
-               <input required class="controls" type="text" name="almacen_cantidad" id="almacen_cantidad" placeholder="Cantidad">
-               <input required class="controls" type="text" name="almacen_precioM" id="almacen_precioM" placeholder="Precio mayoreo">
+               <input required class="controlsalmacen" type="text" name="almacen_tipo" id="almacen_tipo" placeholder="Tipo de producto">
+               <input required class="controlsalmacen" type="text" name="almacen_descripcion" id="almacen_descripcion" placeholder="Descripción">
+               <input required class="controlsalmacen" type="text" name="almacen_precioI" id="almacen_precioI" placeholder="Precio individual">
+               <input required class="controlsalmacen" type="text" name="almacen_cantidad" id="almacen_cantidad" placeholder="Cantidad">
+               <input required class="controlsalmacen" type="text" name="almacen_precioM" id="almacen_precioM" placeholder="Precio mayoreo">
                
                <center>
                    <table class="tabla">
@@ -37,6 +37,7 @@
                            <td><input class="button" type="reset" value="Limpiar"></td>
                            <td><a href="./consulta.php?tabla=almacen"><input class="button" type="button" value="Buscar"></a></td>
                            <td><a href="index.html"><input class="button" type="button" value="Cerrar"></a></td>
+                           <td></td>
                         </table>
                     </center>
             </form>

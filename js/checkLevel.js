@@ -6,7 +6,7 @@ fetch("./php/checkLevel.php")
     console.log(res);
     if (res == 'admin'){
         document.getElementById('menu').innerHTML = `           
-     <li><a href="almacen.html">Almacén</a></li>
+    <li><a href="almacen.html">Almacén</a></li>
     <li><a href="servicios.html">Servicios</a></li>
     <li><a href="clientes.html">Clientes</a></li>
     <li><a href="empleados.html">Empleados</a></li> 
@@ -26,4 +26,4 @@ fetch("./php/checkLevel.php")
     <li><a href="javascript:exitSystem()" class="salir">Salir</a></li>`;
     }
 })
-.catch((err)=>{console.log(err);})
+.catch((err)=> console.log(err));

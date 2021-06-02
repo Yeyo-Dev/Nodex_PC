@@ -49,7 +49,7 @@ try{
         $query = $query ."clientes_id='$id', clientes_nombre='$clientes_nombre', clientes_apellidoP='$clientes_apellidoP, clientes_apellidoM='$clientes_apellidoM', clientes_direccion='$clientes_direccion', clientes_tel1='$clientes_tel1', clientes_tel2='$clientes_tel2', clientes_fechaNacimiento='$clientes_fechaNacimiento', clientes_email='$clientes_email' WHERE clientes_id='$id';";
 
     }elseif($tabla == "empleados"){
-        $empleado_id=$_POST['empleado_id'];
+        $empleado_id=$id;
         $empleado_nombre = $_POST['empleado_nombre'];
         if(empty($_FILES['empleado_fotografia']['tmp_name']) || $_FILES['empleado_fotografia']['tmp_name']=="") {       
             $empleado_fotografia = '';

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            background-color: transparent;
+        }
+        #header{
+            margin-top: 0px;
+            padding-top: 0px;
+            position: absolute;
+            height: 30%;
+            width: 100%;
+            background-color: black;
+            color: white;
+            text-align:end;
+            align-items:flex-end;
+            font-size: 120%;
+        }
+
+        #header img{
+           border-radius: 50%;
+           width: 3%; 
+           height: auto;
+           margin:0px;
+           vertical-align: middle;
+           padding: 2px;
+           padding-top: -1px;
+        }
+    </style>
+        <div id="header"></div>
+    <script>
+        async function init(){
+            let res = await fetch("./php/Titulo.php");
+            res = await res.text();
+            document.getElementById('header').innerHTML = res;
+        
+        }
+         init();
+    </script>
+</body>
+</html>

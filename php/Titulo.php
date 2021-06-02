@@ -12,13 +12,13 @@ if($_SESSION['nombre']){
     if ($totCuentas > 0) {
         while ($rowCunt = mysqli_fetch_array($res)) {
             $usuario = $rowCunt['empleado_nombre'];
-            $foto = "data:image/jpg;base64,". base64_encode($rowCunt['empleado_fotografia']);
+            $foto = base64_encode($rowCunt['empleado_fotografia']);
         }
         ?><p><?php echo $usuario; ?>&nbsp<img src="<?php
-                if(!empty($rowCunt['empleado_fotografia'])){
-                echo $foto;
+                if(empty($foto) || $foto==''){
+                    echo "./img/none.jpg";
                 }else{
-                echo "./img/none.jpg";
+                    echo "data:image/jpg;base64,". $foto;
                 }
                 ?>" alt="<?php echo $usuario; ?>">
           </p>

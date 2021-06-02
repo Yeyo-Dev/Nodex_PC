@@ -342,3 +342,16 @@ width: 200px;
      border-width: 5px;
  }
 
+#email ,#email img {
+    width: 5%;
+    border-radius: 50%;
+    position: fixed;
+    top: 85%;
+    left: 93%;
+
+}
+
+#email img:hover {
+    top: 83%;
+    box-shadow: 2px 2px 10px rgb(205, 184, 205);
+}

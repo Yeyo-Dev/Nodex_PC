@@ -40,6 +40,6 @@ async function formMail(){
             console.log(err);
         })
       }else{
-        swal.fire("No lleno ningun campo");
+        swal.fire("Mensaje cancelado");
       }
 }

@@ -23,7 +23,7 @@ if($tabla  == "empleados" || $tabla  == "usuarios" ){
 
     <style>
         body{
-            background-color: whitesmoke;
+            background-color: black;
 
         }
         .tarjeta{

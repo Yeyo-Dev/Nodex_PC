@@ -17,7 +17,7 @@
         <header></header>
         <input type="checkbox" id="check">
         <label for="check" class="icon-menu">&nbsp; Menu</label>
-        <h2 onclick="formMail()">Nodex-PC&nbsp;&nbsp;</h2>
+        <h2>Nodex-PC&nbsp;&nbsp;</h2>
         <ul class="menu" id="menu">
             <li><a href="javascript:exitSystem()" class="salir">Salir</a></li>
         </ul>
@@ -26,7 +26,10 @@
 </main>
         <center>
         <iframe id="reloj-frame" title="Reloj" width="320" height="320"  src="./reloj.html"></iframe>
-        </center> 
+        </center>
+        <div id="email" onclick="formMail()">
+            <img src="./img/mail.png" alt="Enviar Email" />
+        </div> 
         <script src="./js/exitSystem.js"></script>
         
        <script src="./js/mail.js"></script>

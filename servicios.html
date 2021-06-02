@@ -17,7 +17,7 @@
                <h1>Formulario Servicios</h1>
                <input class="controls" type="text" name="servicio_folio" id="servicio-folio" placeholder="Inserte folio">
                <input class="controls" type="text" name="servicio_tipo" id="servicio_tipo" placeholder="Tipo de mantenimiento">
-               <input class="controls" type="text" name="servicio_fecha" id="servicio_fecha" placeholder="Fecha">
+               <input class="controls" type="date" name="servicio_fecha" id="servicio_fecha" placeholder="Fecha">
                <input class="controls" type="text" name="servicio_hora" id="servicio_hora" placeholder="Hora">
                <input class="controls" type="text" name="servicio_id_cliente" id="servicio_id_cliente" placeholder="Inserte id de cliente">
                <input class="controls" type="text" name="servicio_precio" id="servicio_precio" placeholder="Precio total">
@@ -30,11 +30,13 @@
                     <td><input class="button" type="reset" value="Limpiar"></td>
                     <td><a href="./consulta.php?tabla=apartadoServicios"><input class="button" type="button" value="Buscar"></a></td>
                     <td><a href="index.html"><input class="button" type="button" value="Cerrar"></a></td>
+                    <td><a href="pdf/servicios_pdf.php"><input class="button" type="button" value="PDF"></a></a></td>
                     <td></td>
                    </tr>
                </table>
                </center>
             </form>
+            <script src="./js/servicios.js"></script>
         </body>
     </div>
     </html>
